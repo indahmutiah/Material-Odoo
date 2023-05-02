@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="materials_supplier_view_form" model="ir.ui.view">
+            <field name="name">materials_supplier.view.form</field>
+            <field name="model">materials.supplier</field>
+            <field name="arch" type="xml">
+                <form string="Supplier">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="materials_supplier_view_tree" model="ir.ui.view">
+            <field name="name">materials_supplier.view.tree</field>
+            <field name="model">materials.supplier</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                </tree>
+            </field>
+        </record>
+        
+        <record id="materials_supplier_view_kanban" model="ir.ui.view">
+            <field name="name">materials_supplier.view.kanban</field>
+            <field name="model">materials.supplier</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <div class="o_kanban_tags_section">
+                                        <ul>
+                                            <li> Name : <field name="name"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="materials_supplier_action" model="ir.actions.act_window">
+            <field name="name">Supplier</field>
+            <field name="res_model">materials.supplier</field>
+            <field name="view_mode">tree,form,kanban,pivot,graph</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('materials_supplier_view_tree')}),
+                (0, 0, {'view_mode': 'kanban', 'view_id': ref('materials_supplier_view_kanban')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('materials_supplier_view_form')})]" />
+            <field name="help" type="html">
+                <p>
+                    Data Not Yet Available!
+                </p>    
+            </field>
+        </record>
+        <menuitem id="materials_supplier_menu" name="Supplier Menu" sequence="2" parent = "root_material" action="materials_supplier_action"/>
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem id="root_material" name="Material" sequence="20" web_icon="materials,static/icon.png" />
+    </data>
+</odoo>
