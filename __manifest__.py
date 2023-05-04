@@ -6,11 +6,11 @@
         Module Material""",
 
     'description': """
-        Management Material 
+        Management Material For Clients 
     """,
 
     'author': "Indah Mutiah Utami. MZ",
-    'website': "",
+    'website': "https://github.com/indahmutiah",
 
     'category': 'Uncategorized',
     'sequence': -100,
